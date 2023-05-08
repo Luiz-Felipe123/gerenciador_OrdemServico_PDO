@@ -54,16 +54,12 @@ $terceirizados = listaDados($tabela);
                     <div class="form-group row">
                         <div class="col-sm-6 mb-3 mb-sm-0">
                             <label> Terceirizado </label>
-                            <?php if ($_SESSION['perfil'] == 1) : ?>
                                 <select class="form-control" id="cod_terceirizado" name="cod_terceirizado" required>
                                     <option value="<?= $cod_terceirizado ?>"><?= $nome_terceirizado ?></option>
                                     <?php foreach ($terceirizados as $dados) : ?>
                                         <option value="<?= $dados['cod'] ?>"><?= $dados['nome'] ?></option>
                                     <?php endforeach ?>
                                 </select>
-                            <?php else : ?>
-                                <input type="text" class="form-control form-control-user" id="nome_terceirizado" name="nome_terceirizado" value="<?= $nome_terceirizado ?>" readonly>
-                            <?php endif; ?>
                         </div>
                         <div class="col-sm-6">
                             <label> Data do Serviço </label>
@@ -83,11 +79,7 @@ $terceirizados = listaDados($tabela);
                     </div>
                     <div class="card-footer text-muted" id="btn-form">
                         <div class=text-right>
-                            <?php if ($_SESSION['perfil'] == 1) : ?>
-                                <a title="Voltar" href="ordem.php"><button type="button" class="btn btn-success"><i class="fas fa-arrow-circle-left"></i>&nbsp;</i>Voltar</button></a>
-                            <?php else : ?>
-                                <a title="Voltar" href="../home/home.php"><button type="button" class="btn btn-success"><i class="fas fa-arrow-circle-left"></i>&nbsp;</i>Voltar</button></a>
-                            <?php endif; ?>
+                            <a title="Voltar" href="ordem.php"><button type="button" class="btn btn-success"><i class="fas fa-arrow-circle-left"></i>&nbsp;</i>Voltar</button></a>
                             <a title="Adicionar"><button type="submit" name="updatebtn" class="btn btn-primary uptadebtn"><i class="fas fa-edit">&nbsp;</i>Atualizar</button> </a>
                         </div>
                     </div>

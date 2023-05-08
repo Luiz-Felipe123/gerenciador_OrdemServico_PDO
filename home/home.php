@@ -36,7 +36,7 @@ require_once ("../bd/bd_generico.php");
                                     $cod_usuario = $_SESSION['cod_usu'];
                                     $status = 1;
                                     $tabela= "ordem";
-                                    $total = consultaStatusClienteTerceirizado($tabela,$cod_usuario,$status);
+                                    $total = consultaStatusCliente($tabela,$cod_usuario,$status);
                                     $valorTotal = $total['0']['total'];
                                     echo '<a href="../ordem_condicao/ordem_aberta.php" style="color: #e74a3b;">' . $valorTotal . '</a>';
                                 }
@@ -44,7 +44,7 @@ require_once ("../bd/bd_generico.php");
                                     $cod_usuario = $_SESSION['cod_usu'];
                                     $status = 1;
                                     $tabela= "ordem";
-                                    $total = consultaStatusClienteTerceirizado($tabela,$cod_usuario,$status);
+                                    $total = consultaStatusTerceirizado($tabela,$cod_usuario,$status);
                                     $valorTotal = $total['0']['total'];
                                     echo '<a href="../ordem_condicao/ordem_aberta.php" style="color: #e74a3b;">' . $valorTotal . '</a>';
                                 }
@@ -79,7 +79,7 @@ require_once ("../bd/bd_generico.php");
                                     $cod_usuario = $_SESSION['cod_usu'];
                                     $status = 2;
                                     $tabela= "ordem";
-                                    $total = consultaStatusClienteTerceirizado($tabela,$cod_usuario,$status);
+                                    $total = consultaStatusCliente($tabela,$cod_usuario,$status);
                                     $totalValue = $total['0']['total'];
                                     echo '<a href="../ordem_condicao/ordem_execucao.php" style="color: #f6c23e;">' . $totalValue. '</a>';
                                 }
@@ -87,7 +87,7 @@ require_once ("../bd/bd_generico.php");
                                     $cod_usuario = $_SESSION['cod_usu'];
                                     $status = 2;
                                     $tabela= "ordem";
-                                    $total = consultaStatusClienteTerceirizado($tabela,$cod_usuario,$status);
+                                    $total = consultaStatusTerceirizado($tabela,$cod_usuario,$status);
                                     $totalValue = $total['0']['total'];
                                     echo '<a href="../ordem_condicao/ordem_execucao.php" style="color: #f6c23e;">' . $totalValue. '</a>';
                                 }
@@ -121,7 +121,7 @@ require_once ("../bd/bd_generico.php");
                                     $cod_usuario = $_SESSION['cod_usu'];
                                     $status = 3;
                                     $tabela= "ordem";
-                                    $total = consultaStatusClienteTerceirizado($tabela,$cod_usuario,$status);
+                                    $total = consultaStatusCliente($tabela,$cod_usuario,$status);
                                     $totalValue = $total['0']['total'];
                                     echo '<a href="../ordem_condicao/ordem_concluida.php" style="color: #36b9cc;">' . $totalValue . '</a>';
                                 }
@@ -129,7 +129,7 @@ require_once ("../bd/bd_generico.php");
                                     $cod_usuario = $_SESSION['cod_usu'];
                                     $status = 3;
                                     $tabela= "ordem";
-                                    $total = consultaStatusClienteTerceirizado($tabela,$cod_usuario,$status);
+                                    $total = consultaStatusTerceirizado($tabela,$cod_usuario,$status);
                                     $totalValue = $total['0']['total'];
                                     echo '<a href="../ordem_condicao/ordem_concluida.php" style="color: #36b9cc;">' . $totalValue . '</a>';
                                 }

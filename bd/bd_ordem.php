@@ -133,6 +133,22 @@ function editarOrdem($codigo,$cod_terceirizado,$data_servico,$status,$data){
     }
 }
 
+function removeOrdem($codigo){
+    $conexao = conecta_bd();
+
+    $query = $conexao->prepare("DELETE FROM ordem
+                WHERE cod = '$codigo'");
+
+    $query->bindParam(1,$codigo);
+    $query->execute();
+    $retorno = $query->execute();
+    if ($retorno) {
+        return 1;
+    }else{
+        return 0;
+    }   
+}
+
 function listaOrdemCliente(){
     $conexao = conecta_bd();
     $query = $conexao->prepare("SELECT
@@ -157,22 +173,6 @@ function listaOrdemCliente(){
     $query->execute();
     $lista = $query->fetchAll(PDO::FETCH_ASSOC);
     return $lista;
-}
-
-function removeOrdem($codigo){
-    $conexao = conecta_bd();
-
-    $query = $conexao->prepare("DELETE FROM ordem
-                WHERE cod = '$codigo'");
-
-    $query->bindParam(1,$codigo);
-    $query->execute();
-    $retorno = $query->execute();
-    if ($retorno) {
-        return 1;
-    }else{
-        return 0;
-    }   
 }
 
 function listaOrdemTerceirizado(){

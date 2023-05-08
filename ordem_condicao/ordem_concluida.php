@@ -132,6 +132,7 @@ require_once('../layout/sidebar.php');
                                     <?php endif;
                                 endforeach;
                             }
+
                             if ($_SESSION['perfil'] == 3) {
                                 $ordem = listaOrdemTerceirizado();
                                 foreach ($ordem as $dados) :
@@ -142,7 +143,6 @@ require_once('../layout/sidebar.php');
                                             <td><?= $dados['nome_terceirizada'] ?></td>
                                             <td><?= $dados['nome_servico'] ?></td>
                                             <td class="text-center"><?= date('d/m/Y', strtotime($dados['data_servico'])) ?></td>
-                                        </tr>
                                     <?php endif;
                                 endforeach;
                             }
